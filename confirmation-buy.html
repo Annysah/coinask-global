@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Payment</title>
+    <link rel="icon" type="image/png" href="images/COINCOIN 0.png">
+    <link rel="stylesheet" href="confirmation-buy.css">
+    <!--<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="menu">
+            <div class="logo">
+                <img src="images/7.png" alt="">
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="hover">Home</a>
+                <a href="market.html" class="hover">Market</a>
+                <a href="buy1.html" class="hover">Buy</a>
+                <a href="sell.html" class="hover">Sell</a>
+                <a href="getintouch.html" class="hover">Get In Touch</a>
+            </div>
+            <div class="reg">
+                <a class="reg-link" href="login.html" target="_blank"><button class="reg-btn">Log In</button></a>
+            </div>
+        </div>
+
+        <div class="bill-board"></div>
+        <div class="con-wrapper">
+            <div class="con-head">
+                <h2>Confirm Payment</h2>
+                <p>Click the <span>"Choose File"</span> button to upload a screenshot or Hashcode</p>
+            </div>
+            <div class="con-flex">
+                <form>
+                    <div>
+                    <div id="img-preview"></div>
+                    <input type="file" id="choose-file" name="choose-file" accept="image/*">
+                    <label for="choose-file">Choose File</label>
+                    </div>
+                </form>
+                <div class="con-contents"> 
+                    <div class="con-text">
+                        <p>Amount of BTC Bought: <span>0.00025 BTC</span></p>
+                        <p>Total Amount Payed: <span>&#8358; 10000</span></p>
+                        <p>Transaction ID: <span>123456</span></p>      
+                    </div>
+                    <div class="context-p"><p> Transaction pending...</p></div>
+                </div>
+            </div> 
+        </div>
+    </div>
+
+    <div class="copyright">
+        <p>Copyright &#169;2020 Coinaskglobal. All rights reserved.</p>
+    </div>
+
+<script>
+const chooseFile = document.getElementById("choose-file");
+const imgPreview = document.getElementById("img-preview");
+
+chooseFile.addEventListener("change", function () {
+  getImgData();
+});
+
+function getImgData() {
+  const files = chooseFile.files[0];
+  if (files) {
+    const fileReader = new FileReader();
+    fileReader.readAsDataURL(files);
+    fileReader.addEventListener("load", function () {
+      imgPreview.style.display = "block";
+      imgPreview.innerHTML = '<img src="' + this.result + '" />';
+    });    
+  }
+}
+</script>
+</body>
+</html>
