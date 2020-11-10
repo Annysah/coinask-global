@@ -177,7 +177,7 @@ label {
     margin-left: 40px;
 }
 
-.btn {
+.btn2 {
     width: 460px;
     background-color: #9370db;
     color: #fff;
@@ -208,6 +208,32 @@ label {
     color: red;
     margin-left: 40px;
 }
+
+.btn2 {
+    width: 80px;
+    margin: 25px auto;
+    padding: 14px 12px;
+    text-align: center;
+    outline: none;
+}
+
+.btn2 a {
+    text-decoration: none;
+    color: #fff;
+}
+
+form button {
+    width: 80px;
+    background-color: #9370db;
+    color: #fff;
+    outline: none;
+    border: 1px solid #9370db;
+    border-radius: 5px;
+    
+    cursor: pointer;
+    font-size: 18px;
+}
+
 
 .copyright {
     margin-top: -20px;
